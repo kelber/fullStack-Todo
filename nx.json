@@ -1,0 +1,24 @@
+{
+  "npmScope": "full-stack-todos",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "full-stack-todos-e2e": {
+      "tags": []
+    },
+    "full-stack-todos": {
+      "tags": []
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
