@@ -145,7 +145,7 @@ create(): string {
 }
 ```
 
-#### Isolando contantes
+#### Isolando constantes
 ```js
 import config from './config/keys';
 
