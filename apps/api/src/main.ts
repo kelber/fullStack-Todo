@@ -9,6 +9,7 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors(); // TODO: desabilitar
 
   // Swagger way
   // const options = new DocumentBuilder()

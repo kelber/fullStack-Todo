@@ -17,13 +17,20 @@ export class TodoController {
             return of(this.todoService.findAll());
         }
 
-    @Get('id')
+    // @Get('id')
     // findOne(@Param('id') id): Observable<Todo> {
     //     return of(this.todoService.find(id));
     // }
 
+    // 1 FASE funciona
+    // @Post()
+    // create() {
+    //     return 'Create item';
+    // }
+
     @Post()
     async create(@Body() todo: Todo) {
+        console.log('passou back cmp', todo);
         this.todoService.create(todo);
         return todo;
     }

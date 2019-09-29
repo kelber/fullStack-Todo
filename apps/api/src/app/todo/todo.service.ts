@@ -1,5 +1,8 @@
 import { Injectable, Post } from '@nestjs/common';
 import { Todo } from './../../../../../libs/api-interfaces/src/lib/todo';
+import { TodoSchema } from './../schemas/todo.schema';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 
 
 export const mockTodos: Todo[] = [
@@ -11,17 +14,33 @@ export const mockTodos: Todo[] = [
 export class TodoService {
     public todos: Todo[] = [];
     
-    constructor() {}
+    constructor(@InjectModel('Todo') private readonly todoModel: Model<Todo>) {}
 
-    @Post()
-    create(todo: Todo) {
-        console.log('BACK', todo);
-        this.todos.push(todo);
+    async create(todo: Todo): Promise<Todo> {
+        console.log('todo api', todo);
+        const createdTodo = new this.todoModel(todo);
+        return await createdTodo.save();
     }
 
-    findAll(): Todo[] {
-        return mockTodos;
+    
+    // create() {
+    //     return 'Create item';
+    // }
+
+    async findAll(): Promise<Todo[]> {
+        return await this.todoModel.find().exec();
+       
     }
+
+    // create(todo: Todo) {
+    //     console.log('BACK', todo);
+    //     this.todos.push(todo);
+    // }
+
+    // OK
+    // findAll(): Todo[] {
+    //     return mockTodos;
+    // }
 
     // find(id: number): Todo {
     //     return this.todos.find(item => {

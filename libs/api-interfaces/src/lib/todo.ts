@@ -1,7 +1,7 @@
 export class Todo {
-    id: number;
+    _id?: string;
     title: string;
     description: string;
-    active: boolean;
+    active?: boolean;
     }
 

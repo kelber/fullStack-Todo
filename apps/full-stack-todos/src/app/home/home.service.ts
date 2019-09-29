@@ -39,7 +39,7 @@ export class HomeService {
     return this.http.post<Todo>(apiUrl, todo, httpOptions).pipe(
       // this.todos.push(todo.value);
         
-          tap((todo: Todo) => console.log(`added article w/ id=${todo.id} e TODO => ${todo}`)),
+          tap((todo: Todo) => console.log(`added article w/ id=${todo._id} e TODO => ${todo}`)),
           catchError(this.handleError<Todo>('Erro ao adicionar Todo'))
         );
   }
