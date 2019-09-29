@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Post } from '@nestjs/common';
 import { Todo } from './../../../../../libs/api-interfaces/src/lib/todo';
 
 
@@ -13,7 +13,9 @@ export class TodoService {
     
     constructor() {}
 
+    @Post()
     create(todo: Todo) {
+        console.log('BACK', todo);
         this.todos.push(todo);
     }
 
@@ -21,11 +23,11 @@ export class TodoService {
         return mockTodos;
     }
 
-    find(id: number): Todo {
-        return this.todos.find(item => {
-            return item.id = id;
-        });
-    }
+    // find(id: number): Todo {
+    //     return this.todos.find(item => {
+    //         return item.id = id;
+    //     });
+    // }
 
     remove(id: number): void {
         this.todos.filter(item => {

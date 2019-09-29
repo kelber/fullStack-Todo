@@ -1,0 +1,56 @@
+<nav>
+    <div class="nav-wrapper blue">
+    <a class="brand-logo center">Todos</a>
+    </div>
+</nav>
+
+<br>
+<div class="container">
+<div class="row">
+    <form class="col s12" [formGroup]="todoForm" >
+        <div class="row">
+            <div class="input-field col s4">
+            <input placeholder="Title" id="title" type="text" class="validate" formControlName="title">
+            <label for="title">Title</label>
+            </div>
+            <div class="input-field col s4">
+            <input id="description" type="text" class="validate" formControlName="description">
+            <label for="description">description</label>
+            </div>
+            <div class="col s4">
+                <button class="waves-effect waves-light btn blue" 
+                [disabled]="!todoForm.valid" 
+                (click)="addTodo(todoForm)"
+                >Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+
+
+<table class="centered striped">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Active</th>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr *ngFor="let todo of $todos">
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.description }}</td>
+        <td>{{ todo.active }}</td>
+
+       
+    
+    </tr>
+
+    </tbody>
+</table>

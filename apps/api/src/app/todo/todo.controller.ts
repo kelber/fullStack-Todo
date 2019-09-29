@@ -18,9 +18,9 @@ export class TodoController {
         }
 
     @Get('id')
-    findOne(@Param('id') id): Observable<Todo> {
-        return of(this.todoService.find(id));
-    }
+    // findOne(@Param('id') id): Observable<Todo> {
+    //     return of(this.todoService.find(id));
+    // }
 
     @Post()
     async create(@Body() todo: Todo) {
