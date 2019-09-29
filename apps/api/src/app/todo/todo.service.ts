@@ -6,8 +6,8 @@ import { Model } from 'mongoose';
 
 
 export const mockTodos: Todo[] = [
-    { id: 0, title: 'Discover NgrX Data', description: 'Discover', active: false },
-    { id: 1, title: 'Test new IronMan armor', description: 'Iron Man', active: true },
+    { title: 'Discover NgrX Data', description: 'Discover', active: false },
+    { title: 'Test new IronMan armor', description: 'Iron Man', active: true },
 ];
 
 @Injectable()

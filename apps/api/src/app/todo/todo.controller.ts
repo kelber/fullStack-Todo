@@ -13,8 +13,9 @@ export class TodoController {
     ) {}
 
     @Get() 
-        findAll(): Observable<Todo[]> {
-            return of(this.todoService.findAll());
+        findAll() {
+            // return of(this.todoService.findAll());
+            return this.todoService.findAll();
         }
 
     // @Get('id')
