@@ -1,5 +1,8 @@
 # FullStackTodos
 
+
+**see**
+https://github.com/datajango/ng-nest-poc
 https://medium.com/@coco.boudard/angular-8-ngrx-data-8-and-nestjs-8463c8af4695
 
 ```js
